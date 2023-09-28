@@ -12,6 +12,17 @@ public class Personagem {
   // Personagem(){
 
   // }
+  public int getEnergia(){
+    return energia;
+  }
+
+  public String getNome(){
+    return nome;
+  }
+
+  public void setEnergia(int energia){
+    this.energia = energia;
+  }
 
   Personagem(String nome){
     this.nome = nome;
@@ -89,4 +100,13 @@ public class Personagem {
     }
     return 0;
   }
+
+  void atacar(String n1, int e1, String n2){
+      
+        System.out.println(n2 + " atacou " + n1);
+        e1--;
+        setEnergia(e1);
+      
+  }
+
 }

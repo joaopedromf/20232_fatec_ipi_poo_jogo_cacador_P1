@@ -27,3 +27,15 @@ git commit (refeicao condicional)
 git add *
 
 git commit (novo personagem)
+
+git add *
+
+git commit (batalha de personagem)
+
+git tag --list
+
+git tag -a v2.0.0 -m entrega02: batalha entre dois personagens
+
+git push origin main
+
+git push origin --tags

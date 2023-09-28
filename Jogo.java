@@ -7,6 +7,19 @@ public class Jogo {
     int personagens = 2;
     int mortos = 0;
     while(personagens != mortos){
+      int duelo = gerador.nextInt(2);
+      if(mortos == 0){
+        switch(duelo){
+          case 0:
+          personagem2.atacar(personagem2.getNome(), personagem2.getEnergia(), personagem.getNome());
+          mortos = mortos + personagem2.morrer(); 
+          break;
+          case 1:
+          personagem.atacar(personagem.getNome(), personagem.getEnergia(), personagem2.getNome());
+          mortos = mortos + personagem.morrer();
+          break;
+        }
+      }
       int oQueFazer = gerador.nextInt(3); //[0..3[
       switch(oQueFazer){
         case 0:

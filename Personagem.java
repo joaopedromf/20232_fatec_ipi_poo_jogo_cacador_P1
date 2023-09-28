@@ -6,6 +6,7 @@ public class Personagem {
   private int fome = 0;
   private int sono = 0;
   private int item = 4;
+  private boolean vivo = true;
 
   //construtor: lista de parâmetros vazia
   // Personagem(){
@@ -29,40 +30,44 @@ public class Personagem {
 
   //comportamentos (métodos)
   void cacar(){
-
-    System.out.println (nome + " caçando...");
-    energia -= 2;
-    item = item + 1;
-    fome = Math.min(fome + 1, 10);
-    sono = Math.min(sono + 1 ,10);
+    if (vivo == true){
+      System.out.println (nome + " caçando...");
+      energia -= 2;
+      item = item + 1;
+      fome = Math.min(fome + 1, 10);
+      sono = Math.min(sono + 1 ,10);
+    }
   }
 
   void comer(){
-    if (fome >= 1 && item >= 1){
-      System.out.println(nome + " comendo...");
-      // operador ternário
-      energia = energia + 1 > 10 ? 10 : energia + 1;
-      fome--;
-      item--;
-    }
-    else if (item == 0){
-      System.out.println(nome + " sem itens...");
-    }
-    else {
-      System.out.println(nome + " sem fome...");
-    }
+      if (vivo == true){
+        if (fome >= 1 && item >= 1){
+          System.out.println(nome + " comendo...");
+        // operador ternário
+          energia = energia + 1 > 10 ? 10 : energia + 1;
+          fome--;
+          item--;
+        }
+        else if (item == 0){
+          System.out.println(nome + " sem itens...");
+        }
+        else {
+          System.out.println(nome + " sem fome...");
+        }
+      }
   }
 
   void dormir(){
-    if(sono > 0){
-      System.out.println(nome + " dormindo...");
-      sono -= 1;
-      energia = Math.min(10, energia + 1);
+    if(vivo == true){
+      if(sono > 0){
+        System.out.println(nome + " dormindo...");
+        sono -= 1;
+        energia = Math.min(10, energia + 1);
+      }
+      else{
+        System.out.println(nome + " sem sono");
+      }
     }
-    else{
-      System.out.println(nome + " sem sono");
-    }
-
   }
 
   void exibirEstado(){
@@ -77,11 +82,11 @@ public class Personagem {
   }
 
   int morrer(){
-    if (energia <= 0){
+    if (energia <= 0 && vivo == true){
       System.out.println(nome + " morreu...");
+      vivo = false;
       return 1;
     }
     return 0;
   }
- 
 }

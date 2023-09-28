@@ -5,7 +5,7 @@ public class Personagem {
   private int energia = 10;
   private int fome = 0;
   private int sono = 0;
-
+  private int item = 4;
 
   //construtor: lista de parâmetros vazia
   // Personagem(){
@@ -32,7 +32,7 @@ public class Personagem {
 
     System.out.println (nome + " caçando...");
     energia -= 2;
-    
+    item = item + 1;
     fome = Math.min(fome + 1, 10);
     sono = Math.min(sono + 1 ,10);
   }
@@ -63,11 +63,12 @@ public class Personagem {
 
   void exibirEstado(){
     System.out.printf(
-      "%s: e: %d, f: %d, s: %d\n",
+      "%s: e: %d, f: %d, s: %d, i: %d\n",
       nome,
       energia,
       fome,
-      sono
+      sono,
+      item
     );
   }
 

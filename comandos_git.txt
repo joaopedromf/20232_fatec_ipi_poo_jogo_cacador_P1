@@ -1,6 +1,6 @@
 git clone https://github.com/professorbossini/20232_fatec_ipi_poo_jogo_cacador.git .
 
-git remote set-url origin https://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@github.com/joaopedromf/20232_fatec_ipi_poo_jogo_cacador_P1.git
+git remote set-url origin https://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@github.com/joaopedromf/20232_fatec_ipi_poo_jogo_cacador_P1.git
 
 git config --local user.name "João Pedro"
 
@@ -15,3 +15,7 @@ git push origin main
 git add *
 
 git commit (morte do personagem)
+
+git add *
+
+git commit (estoque de itens)

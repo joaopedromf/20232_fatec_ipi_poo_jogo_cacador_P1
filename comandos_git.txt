@@ -19,3 +19,7 @@ git commit (morte do personagem)
 git add *
 
 git commit (estoque de itens)
+
+git add *
+
+git commit (refeicao condicional)

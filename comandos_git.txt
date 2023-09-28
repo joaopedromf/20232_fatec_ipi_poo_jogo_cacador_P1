@@ -8,4 +8,10 @@ git config --local user.email joao.forte@fatec.sp.gov.br
 
 git add *
 
-git commit
+git commit (inicializando repositorio)
+
+git push origin main
+
+git add *
+
+git commit (morte do personagem)

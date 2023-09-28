@@ -6,6 +6,7 @@ public class Personagem {
   private int fome = 0;
   private int sono = 0;
 
+
   //construtor: lista de parâmetros vazia
   // Personagem(){
 
@@ -23,17 +24,15 @@ public class Personagem {
       this.fome = fome;
     if(sono >= 0 && sono <= 10)
       this.sono = sono;  
+
   }
 
   //comportamentos (métodos)
   void cacar(){
-    if(energia >= 2){
-      System.out.println(nome + " caçando...");
-      energia -= 2; // energia = energia - 2;
-    }
-    else{
-      System.out.println (nome + " sem energia para caçar...");
-    }
+
+    System.out.println (nome + " caçando...");
+    energia -= 2;
+    
     fome = Math.min(fome + 1, 10);
     sono = Math.min(sono + 1 ,10);
   }
@@ -70,6 +69,14 @@ public class Personagem {
       fome,
       sono
     );
+  }
+
+  int morrer(){
+    if (energia <= 0){
+      System.out.println(nome + " morreu...");
+      return 1;
+    }
+    return 0;
   }
  
 }
